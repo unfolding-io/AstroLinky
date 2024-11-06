@@ -84,7 +84,7 @@ By [caffeinating](https://www.buymeacoffee.com/unfolding.io) your developer, you
 
 ## 📸 Screenshots
 
-![Astrorante](https://astrolinky.netlify.app/screenshots/AstroLinky_1.png)
-![Astrorante](https://astrolinky.netlify.app/screenshots/AstroLinky_2.png)
-![Astrorante](https://astrolinky.netlify.app/screenshots/AstroLinky_login.png)
-![Astrorante](https://astrolinky.netlify.app/screenshots/AstroLinky_admin.png)
+![AstroLinky Astro Url Shortener](https://astrolinky.netlify.app/screenshots/AstroLinky_1.png)
+![AstroLinky Astro Url Shortener](https://astrolinky.netlify.app/screenshots/AstroLinky_2.png)
+![AstroLinky Astro Url Shortener](https://astrolinky.netlify.app/screenshots/AstroLinky_login.png)
+![AstroLinky Astro Url Shortener](https://astrolinky.netlify.app/screenshots/AstroLinky_admin.png)
