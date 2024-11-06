@@ -1,0 +1,17 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { db, Links } from "astro:db";
+import LinksAdmin from "../components/LinksAdmin.vue";
+
+const links = await db.select().from(Links);
+
+const baseUrl = Astro.url.origin;
+---
+
+<Layout title="Admin" isAdmin>
+    <div class="container pt-14 self-center grid place-items-center h-full"> 
+    <div class="link-list w-full">
+      <LinksAdmin client:idle data={links} base-url={baseUrl} />
+    </div>
+  </div>
+</Layout>

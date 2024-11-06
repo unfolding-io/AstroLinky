@@ -1,0 +1,31 @@
+---
+import { actions } from "astro:actions";
+import { db, Links, eq } from "astro:db";
+export const prerender = false;
+const { slug } = Astro.params;
+
+if (!slug) {
+  return Astro.redirect("/404");
+}
+
+const { data, error } = await actions.getLink({ slug });
+
+if (error) {
+  return Astro.redirect("/404");
+}
+
+if (!data) {
+  return Astro.redirect("/404");
+}
+
+if ("href" in data) {
+  await db
+    .update(Links)
+    .set({ hits: data.hits + 1 })
+    .where(eq(Links.slug, slug));
+
+  return Astro.redirect(data.href);
+}
+---
+
+<div>404</div>

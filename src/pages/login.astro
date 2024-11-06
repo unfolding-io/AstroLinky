@@ -1,0 +1,15 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LoginForm from "@/components/LoginForm.vue";
+---
+
+<Layout title="Login">
+   
+  <div class="container py-14 self-center grid place-items-center h-full"> 
+      <div class="grid">
+        <h1 class="text-5xl md:text-5xl pb-8">Login</h1>
+        <LoginForm client:idle />
+      </div>
+    </div>
+  
+</Layout>
