@@ -2,7 +2,7 @@
 
 [![License: CC BY-ND 4.0](https://img.shields.io/badge/License-CC_BY--ND_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nd/4.0/)
 
-### 👉 [Demo & Docs](https://astrolinky.netlify.app/)
+### 👉 [Demo](https://astrolinky.netlify.app/)
 
 This is a simple URL shortener repo, perfect for creating shortened URLs on your subdomain that redirect to other links.
 
@@ -12,11 +12,12 @@ This is a simple URL shortener repo, perfect for creating shortened URLs on your
 - **Click Counter**: Track the number of clicks for each URL.
 - **QR Code Generator**: Generates SVG QR codes for easy sharing.
 - **Powered by Astro DB + Turso**: Leverages Astro DB for quick, serverless data management.
-
+- **Optional Public URL Shortener Interface**: Enable a public-facing interface for users to create their own short URLs (can be toggled on or off).
+&nbsp;
 ---
 &nbsp;
 
-> **Note**: This URL shortener is designed for small-scale use and has not been stress-tested or fully optimized for high traffic. It supports a single user defined in the `.env` file and uses `node-jsonwebtoken` for authentication. There is currently no brute-force protection, so use with caution. For added security, consider customizing the admin URL and/or enhancing middleware for your needs.
+> **Note**: This URL shortener is designed for small-scale use and has not been stress-tested or fully optimized for high traffic. It supports a single admin user defined in the `.env` file and uses `node-jsonwebtoken` for authentication. There is currently no brute-force protection, so use with caution. For added security, consider customizing the admin URL and/or enhancing middleware for your needs.
 
 &nbsp;
 ---
