@@ -8,7 +8,7 @@ import icon from 'astro-icon';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://rmmbr-links.netlify.app/",
+  site: "https://astrolinky.netlify.app/",
   integrations: [db(), tailwind({applyBaseStyles: false}), vue(), icon()],
   output: 'server',
   adapter: netlify()
