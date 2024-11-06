@@ -63,7 +63,11 @@ This is a simple URL shortener repo, perfect for creating shortened URLs on your
     USERNAME=AdminUser007
     PASSWORD=My-great-p@ssw0rd
     SECRET_KEY=XozzHgfaassdds!asdmas
+    IS_PUBLIC=1
+    SHOW_GITHUB=1
    ```
+
+   _IS_PUBLIC will unlock the public frontpage url-shortner._
 
 7. **Set Up Environment Variables**
    ```bash
