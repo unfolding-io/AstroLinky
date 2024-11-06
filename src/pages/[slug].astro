@@ -19,6 +19,11 @@ if (!data) {
 }
 
 if ("href" in data) {
+  if (data.href.includes(Astro.url.host)) {
+    console.error("interception link... abort:", data.href);
+    return Astro.redirect("/404");
+  }
+
   await db
     .update(Links)
     .set({ hits: data.hits + 1 })
