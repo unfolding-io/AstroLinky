@@ -80,3 +80,11 @@ This is a simple URL shortener repo, perfect for creating shortened URLs on your
 By [caffeinating](https://www.buymeacoffee.com/unfolding.io) your developer, you're not just getting the best out of them; you're also ensuring a cheerful and energetic work environment.😊
 
 [![buymeacoffee](https://starfunnel.unfolding.io/screenshots/bymeacoffee.webp)](https://www.buymeacoffee.com/unfolding.io)
+
+
+## 📸 Screenshots
+
+![Astrorante](https://astrolinky.netlify.app/screenshots/AstroLinky_1.png)
+![Astrorante](https://astrolinky.netlify.app/screenshots/AstroLinky_2.png)
+![Astrorante](https://astrolinky.netlify.app/screenshots/AstroLinky_login.png)
+![Astrorante](https://astrolinky.netlify.app/screenshots/AstroLinky_admin.png)
