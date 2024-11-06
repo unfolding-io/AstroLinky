@@ -13,7 +13,13 @@ This is a simple URL shortener repo, perfect for creating shortened URLs on your
 - **QR Code Generator**: Generates SVG QR codes for easy sharing.
 - **Powered by Astro DB + Turso**: Leverages Astro DB for quick, serverless data management.
 
-> **Note**: This version supports a single user defined in the `.env` file and utilizes `node-jsonwebtoken`. There is currently no brute-force protection, so use with caution. For added security, consider customizing the admin URL and/or enhancing the middleware.
+---
+&nbsp;
+
+> **Note**: This URL shortener is designed for small-scale use and has not been stress-tested or fully optimized for high traffic. It supports a single user defined in the `.env` file and uses `node-jsonwebtoken` for authentication. There is currently no brute-force protection, so use with caution. For added security, consider customizing the admin URL and/or enhancing middleware for your needs.
+
+&nbsp;
+---
 
 ## Getting Started
 
