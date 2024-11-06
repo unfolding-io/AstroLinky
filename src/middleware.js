@@ -28,18 +28,13 @@ export const onRequest = defineMiddleware(async (context, next) => {
     }
   }
 
-  console.log("url.pathname", url.pathname);
-
   /* CHECK AUTH STATUS */
   if (url.pathname.endsWith("/admin")) {
     if (!access_token || !user || user !== USERNAME) return redirect("/login");
   }
+ 
 
-  console.log(url.pathname, IS_PUBLIC, access_token);
-
-  if (
-    (url.pathname.startsWith("/qr") && !IS_PUBLIC && !access_token)
-  ) { 
+  if (url.pathname.startsWith("/qr") && !IS_PUBLIC && !access_token) {
     return redirect("/404");
   }
 

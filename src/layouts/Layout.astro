@@ -6,20 +6,46 @@ export const prerender = false;
 interface Props {
   title: string;
   isAdmin?: boolean;
+  description?: string;
 }
 const SHOW_GITHUB = import.meta.env.SHOW_GITHUB == 1 ? true : false;
 
-const { title, isAdmin = false } = Astro.props;
+const {
+  title = "AstroLinky, The Astro-Powered URL Shortener & QR Code Generator",
+  description = "AstroLinky lets you create short, easy-to-share URLs with just a few clicks. Powered by the speed and efficiency of Astro, we provide you with lightning-fast redirects, custom URL slugs, and the ability to generate QR codes in seconds.",
+  isAdmin = false,
+} = Astro.props;
+
+const ogImage = new URL("/AstroLinky.png", Astro.url);
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
     <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImage} />
+
     <ViewTransitions fallback="swap" />
   </head>
   <body class="bg-slate-700 text-slate-100 minh-svh h-full">
@@ -36,6 +62,7 @@ const { title, isAdmin = false } = Astro.props;
             <a
               href="https://github.com/unfolding-io/AstroLinky"
               target="_blank"
+              aria-label="open github project"
             >
               <Icon name="github" class="h-8 w-auto" is:inline />
             </a>
@@ -57,7 +84,7 @@ const { title, isAdmin = false } = Astro.props;
       <slot />
     </main>
 
-    <footer class="bg-slate-900/70  px-4 sm:px-6 flex justify-end shadow-3xl">
+    <footer class="bg-slate-900/70 px-4 sm:px-6 flex justify-end shadow-3xl">
       <!-- 👉👉 CC BY-ND 4.0 ©️unfolding.io  👈👈 -->
       <!-- ⚠️⚠️ DO NOT REMOVE THE ATTRIBUTION ⚠️⚠️ -->
       <!-- Or hide this trough css or js. Keep it visible and readeble-->

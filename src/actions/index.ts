@@ -39,7 +39,11 @@ export const server = {
     handler: async ({ slug, href }) => {
       try {
         if (typeof slug === "string" && typeof href === "string") {
-          const existingLink = await db.select().from(Links).where(eq(Links.slug, slug)).get();
+          const existingLink = await db
+            .select()
+            .from(Links)
+            .where(eq(Links.slug, slug))
+            .get();
           if (existingLink) {
             return {
               status: "error",
@@ -47,14 +51,13 @@ export const server = {
             };
           }
           await db.insert(Links).values({ slug, href });
- 
+
           return {
             status: "success",
             slug: slug,
             href: href,
             message: "Link added successfully",
-          }
-          
+          };
         }
       } catch (error: any) {
         console.error("DB error:", error?.status);
@@ -89,7 +92,7 @@ export const server = {
     handler: async ({ slug }) => {
       try {
         const link = await db.select().from(Links).where(eq(Links.slug, slug));
-        console.log("link:", link);
+
         return link.pop();
       } catch (error: any) {
         console.error("error:", error);
