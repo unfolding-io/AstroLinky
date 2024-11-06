@@ -26,36 +26,36 @@ This is a simple URL shortener repo, perfect for creating shortened URLs on your
 1. **Authenticate with Turso**
 
    ```bash
-   turso auth login
+   $ turso auth login
    ```
 
 2. **Create the Database**
 
    ```bash
-   turso db create <my_database_name>
+   $ turso db create <my_database_name>
    ```
 
 3. **Retrieve Database Info**
    ```bash
-   turso db show <my_database_name>
+   $ turso db show <my_database_name>
    ```
    Copy the database URL and add it to .env as:
      ```bash
-       ASTRO_DB_REMOTE_URL=<your_database_url>
+   ASTRO_DB_REMOTE_URL=<your_database_url>
      ```
 
 4. **Generate the Token**
    ```bash
-   turso db tokens create <my_database_name>
+   $ turso db tokens create <my_database_name>
    ```
    Add the generated token to .env as:
      ```bash
-       ASTRO_DB_APP_TOKEN=<your_database_token>
+   ASTRO_DB_APP_TOKEN=<your_database_token>
      ```
 
 5. **Push Database to Production**
    ```bash
-   npm run db:push
+   $ npm run db:push
    ```
 
 6. **Set Up Environment Variables**
@@ -71,8 +71,13 @@ This is a simple URL shortener repo, perfect for creating shortened URLs on your
 
 7. **Set Up Environment Variables**
    ```bash
-    npm run dev
+    $ npm run dev
     ```
+
+**AtroLinky routes:**
+- /
+- /login
+- /admin
 
 
 ## ☕️ Want to Caffeinate your Developer? 
