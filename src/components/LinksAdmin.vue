@@ -3,7 +3,7 @@
     class="flex flex-wrap gap-10 items-end mb-4 w-full border-b-slate-500 border-b pb-10 sm:pb-14">
     <div class="grid grid-cols-1 gap-1 relative flex-1 min-w-[300px]">
       <label for="slug" class="uppercase text-xs text-slate-400">Slug</label>
-      <Input type="text" v-model="form.slug" id="slug" required class="text-slate-700 text-lg" />
+      <Input type="text" v-model="form.slug" id="slug" required class="text-slate-700 text-lg" @focus="handleFocus" />
       <div class="h-4 absolute -bottom-5 text-red-400">
         <span v-if="errorFields?.slug && errorFields?.slug[0]?.message">
           {{ errorFields.slug[0].message }}
@@ -15,7 +15,7 @@
     <div class="grid grid-cols-1 gap-1 relative flex-1 min-w-[300px]">
       <label for="href" class="uppercase text-xs text-slate-400">Href</label>
       <div class="flex items-stretch h-fit">
-        <Input type="text" v-model="form.href" id="href" required class="text-slate-700 text-lg rounded-r-none" @blur="updateSlug" @mouseleave="updateSlug" />
+        <Input type="text" v-model="form.href" id="href" required class="text-slate-700 text-lg rounded-r-none" @focus="handleFocus" @blur="updateSlug" @mouseleave="updateSlug" />
        
         <Button type="submit" :disabled="!pass || !isUnique"
           class="rounded-l-none text-lg bg-slate-800 hover:bg-teal-400 hover:text-slate-800 py-5">
@@ -48,10 +48,10 @@
     </svg>
   </div>
   <div class="max-w-md mb-4">
-    <Input type="text" placeholder="Search" v-model="search" class="text-slate-700 text-lg" />
+    <Input type="text" placeholder="Search" v-model="search" class="text-slate-700 text-lg" @focus="handleFocus" />
   </div>
 
-  <div v-bind="containerProps" class="list-container overflow-scroll grid grid-cols-1">
+  <div v-bind="containerProps" class="list-container overflow-y-scroll overflow-x-hidden grid grid-cols-1">
     <div v-bind="wrapperProps">
       <div v-for="{ index, data } in list" :key="index" class="" :style="{
         height: `61px`,
@@ -254,6 +254,10 @@ const updateSlug = () => {
   if (!form.slug && form.href) {
     form.slug = getUUIDv5(form.href);
   }
+};
+
+const handleFocus = (event) => {
+  event.target.select();
 };
 
 onMounted(() => {

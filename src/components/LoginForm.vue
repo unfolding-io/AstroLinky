@@ -7,6 +7,7 @@
           id="email"
           v-model="form.email"
           required
+          @focus="handleFocus"
           class="text-slate-700 p-6 text-lg"
         />
       </div>
@@ -17,6 +18,7 @@
           id="password"
           v-model="form.password"
           required
+          @focus="handleFocus"
           class="text-slate-700 p-6 text-lg"
         />
       </div>
@@ -63,6 +65,10 @@ const rules = {
 const { pass } = useAsyncValidator(form, rules);
 
 // Methods
+const handleFocus = (event) => {
+  event.target.select();
+};
+
 const handleSubmit = async () => {
   try {
     const { data, error } = await actions.login({

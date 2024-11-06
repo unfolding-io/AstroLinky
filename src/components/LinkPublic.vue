@@ -5,10 +5,11 @@
 
             <form @submit.prevent="handleSubmit" class="flex flex-col justify-center gap-10 w-full h-fit">
                 <div class="grid grid-cols-1 gap-1 relative flex-1 min-w-[300px]">
-                    <label for="href" class="uppercase text-xs text-slate-400">Href</label>
+                    <label for="href" class="uppercase text-xs text-slate-400">
+                        Shorten a long URL</label>
 
-                    <Input type="text" v-model="form.href" id="href" required class="text-slate-700 text-lg p-7"
-                        @blur="updateSlug" @mouseleave="updateSlug" />
+                    <Input type="text" v-model="form.href" id="href" placeholder="https://" required class="text-slate-700 text-lg p-7"
+                        @focus="handleFocus" @blur="updateSlug" @mouseleave="updateSlug" />
 
                     <div class="h-4 absolute -bottom-5 text-red-400">
                         <span v-if="errorFields?.href && errorFields?.href[0]?.message">
@@ -18,9 +19,11 @@
                 </div>
 
                 <div class="grid grid-cols-1 gap-1 relative flex-1 min-w-[300px]">
-                    <label for="slug" class="uppercase text-xs text-slate-400">Slug</label>
+                    <label for="slug" class="uppercase text-xs text-slate-400">Alias</label>
+                    
                     <Input type="text" v-model="form.slug" id="slug" required class="text-slate-700 text-lg p-7"
-                        @input="handleCheck" />
+                        @focus="handleFocus" @input="handleCheck" />
+                        
                     <div class="h-4 absolute -bottom-5 text-red-400">
                         <span v-if="errorFields?.slug && errorFields?.slug[0]?.message">
                             {{ errorFields.slug[0].message }}
@@ -211,5 +214,9 @@ const updateSlug = () => {
     if (!form.slug && form.href) {
         form.slug = getUUIDv5(form.href);
     }
+};
+
+const handleFocus = (event) => {
+    event.target.select();
 };
 </script>
