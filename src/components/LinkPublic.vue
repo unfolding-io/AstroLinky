@@ -279,7 +279,7 @@ const notAllowed = computed(() => {
   const excludes = ["admin", "login", "logout", "index", "qr"];
   return excludes.includes(slugify(form.slug));
 });
-
+ 
 // Methods
 function getUUIDv5(url) {
   return uuidv5(url, uuidv5.URL).substring(0, 8);

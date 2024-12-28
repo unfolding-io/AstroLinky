@@ -8,7 +8,7 @@ if (!slug) {
   return Astro.redirect("/404");
 }
 
-const { data, error } = await actions.getLink({ slug });
+const { data, error } = await Astro.callAction(actions.getLink, { slug: slug });
 
 if (error) {
   return Astro.redirect("/404");

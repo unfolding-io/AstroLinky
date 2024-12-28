@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import { Icon } from "astro-icon/components";
 import "@/styles/globals.css";
 export const prerender = false;
@@ -46,7 +46,7 @@ const ogImage = new URL("/AstroLinky.png", Astro.url);
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={ogImage} />
 
-    <ViewTransitions fallback="swap" />
+    <ClientRouter fallback="swap" />
   </head>
   <body class="bg-slate-700 text-slate-100 minh-svh h-full">
     <header

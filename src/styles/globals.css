@@ -99,3 +99,9 @@ footer {
 .list-container { 
   height: calc(100vh - 375px);
 }
+.hide-scrollbar {
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}

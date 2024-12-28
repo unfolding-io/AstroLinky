@@ -86,6 +86,7 @@ export const server = {
     },
   }),
   getLink: defineAction({
+    accept: "json",
     input: z.object({
       slug: z.string(),
     }),

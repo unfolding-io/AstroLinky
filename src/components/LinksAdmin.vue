@@ -51,7 +51,7 @@
     <Input type="text" placeholder="Search" v-model="search" class="text-slate-700 text-lg" @focus="handleFocus" />
   </div>
 
-  <div v-bind="containerProps" class="list-container overflow-y-scroll overflow-x-hidden grid grid-cols-1">
+  <div v-bind="containerProps" class="list-container overflow-y-scroll hide-scrollbar overflow-x-hidden grid grid-cols-1">
     <div v-bind="wrapperProps">
       <div v-for="{ index, data } in list" :key="index" class="" :style="{
         height: `61px`,

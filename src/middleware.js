@@ -29,7 +29,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
   }
 
   /* CHECK AUTH STATUS */
-  if (url.pathname.endsWith("/admin")) {
+  if (url.pathname.startsWith("/admin")) {
     if (!access_token || !user || user !== USERNAME) return redirect("/login");
   }
  
